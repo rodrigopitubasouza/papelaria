@@ -1,0 +1,25 @@
+<div class="full-screen d-flex">
+    <div class="right-div">
+        <span class="custom-span right-number">4</span>
+        <img class="custom-img" src="../../../../assets/images/not-found.svg" alt="Not Found">
+        <span class="custom-span left-number">4</span>
+    </div>
+    <div class="left-div">
+        <h3 class="title">Página não encontrada.</h3>
+        <p>Desculpe, o conteudo que você solicitou não foi encontrado em nossos servidores.</p>
+        <p>Verifique se o endereço digitado está correto.</p>
+        <div class="row">
+            <div class="ml-3 mr-2">
+                <button type="button" class="btn btn-outline-light custom-button" (click)="back()">
+                    Voltar
+                </button>
+            </div>
+            <div>
+                <button type="button" class="btn btn-outline-light custom-button" [routerLink]="['/home']">
+                    Home
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>

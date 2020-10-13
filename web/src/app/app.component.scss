@@ -1,0 +1,29 @@
+.custom-navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+  }
+  
+  .custom-container {
+    position: absolute;
+    width: 100%;
+    top: 64px;
+    bottom: 0px;
+  }
+  
+  .mat-drawer-side {
+    border-right: solid 1px grey !important;
+  }
+  
+  .custom-sidebar {
+    width: 12rem;
+    height: fit-content;
+    border-right: solid 1px grey;
+    border-radius: 0 0 3px;
+  }
+  
+  .custom-footer {
+    z-index: 3;
+    width: 100%;
+  }
+  

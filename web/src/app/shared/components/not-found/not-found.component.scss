@@ -1,0 +1,39 @@
+.right-div {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+  margin-top: 7em;
+}
+
+.left-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 50%;
+  margin-top: 12em;
+  margin-left: 1em;
+  padding-right: 1em;
+}
+
+.custom-span {
+  color: black;
+  font-size: 14em;
+}
+
+.right-number {
+  margin-right: -0.25em;
+}
+
+.left-number {
+  margin-left: -0.1em;
+}
+
+.custom-img {
+  width: 15em;
+  margin-top: 2.5em;
+}
+
+.custom-button {
+  margin-top: 1em;
+}

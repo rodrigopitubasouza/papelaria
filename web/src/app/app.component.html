@@ -1,0 +1,14 @@
+<app-loading></app-loading>
+<app-navbar class="custom-navbar"></app-navbar>
+<mat-drawer-container class="custom-container" hasBackdrop="false">
+
+    <div class="custom-outlet">
+        <router-outlet></router-outlet>
+    </div>
+    <app-footer class="custom-footer"></app-footer>
+
+    <mat-drawer #drawer class="custom-sidebar" mode="over">
+        <app-menu></app-menu>
+    </mat-drawer>
+
+</mat-drawer-container>
