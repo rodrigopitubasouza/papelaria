@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { LoadingService } from 'src/app/shared/components/loading/loading.component';
 import { Produto } from '../produto/models/produto.model';
 import { ProdutoService } from '../produto/services/produto.service';
 
@@ -20,6 +21,7 @@ export class GerenciarEstoqueComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
   constructor(private produtoService: ProdutoService,
+    private loadingService: LoadingService,
     private router: Router) {}
   ngOnInit(): void {
     this.produtoService.findAll().subscribe( listaProdutos => {
@@ -37,6 +39,7 @@ export class GerenciarEstoqueComponent implements OnInit {
   }
 
   deletar(id, index) {
+    this.loadingService.showLoading();
     this.produtoService.deletar(id).subscribe( success => {
         this.dataSource.data.splice(index, 1)
         this.dataSource.data = [...this.dataSource.data];
