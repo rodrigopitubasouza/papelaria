@@ -7,8 +7,8 @@ import { ProdutoService } from './services/produto.service';
 import { CategoriaService } from './services/categoria.service';
 import { Produto } from './models/produto.model';
 import { Categoria } from './models/categoria.model';
-import { ErrorStateMatcher } from '@angular/material/core';
 import { LoadingService } from 'src/app/shared/components/loading/loading.component';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-produto',
@@ -40,7 +40,8 @@ export class ProdutoComponent implements OnInit {
               private produtoService: ProdutoService,
               private categoriaService: CategoriaService,
               private loadingService: LoadingService,
-              private router: Router
+              private router: Router,
+              private location: Location
     ) { }
 
   ngOnInit(): void {
@@ -50,7 +51,6 @@ export class ProdutoComponent implements OnInit {
   }
 
   public addFieldException(error, form?): boolean {
-    debugger
     let hasError = false;
     if (error.status === 400 && error.error.subErrors) {
         for (const validationError of error.error.subErrors) {
@@ -139,5 +139,9 @@ export class ProdutoComponent implements OnInit {
       this.categoriaService.findAll().subscribe((categorias: Categoria[]) => {
         this.categorias = categorias;
       });
+  }
+
+  back() {
+    this.location.back();
   }
 }
