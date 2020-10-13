@@ -35,9 +35,9 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(BusinessException.class)
-    protected ResponseEntity<Object> handleException(BusinessException ex, HttpHeaders headers, HttpStatus status) {
-        ApiError apiError = new ApiError(status, ex.getMessage(), ex);
-        return new ResponseEntity<>(apiError, status);
+    protected ResponseEntity<Object> handleException(BusinessException ex) {
+        ApiError apiError = new ApiError(HttpStatus.UNPROCESSABLE_ENTITY, ex.getMessage(), ex);
+        return new ResponseEntity<>(apiError, HttpStatus.UNPROCESSABLE_ENTITY);
     }
 
     private List<ApiValidationError> getMessagesOfField(MethodArgumentNotValidException ex) {

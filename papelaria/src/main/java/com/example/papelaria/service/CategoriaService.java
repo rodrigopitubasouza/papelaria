@@ -31,7 +31,7 @@ public class CategoriaService {
     }
 
     public Categoria findByIdValidado(Integer id) {
-        return repository.findById(id).orElseThrow(() -> new BusinessException(MessageFormat.format("Categoria de id {} não encontrado.", id)));
+        return repository.findById(id).orElseThrow(() -> new BusinessException(MessageFormat.format("Categoria de id {0} não encontrado.", id)));
     }
 
     private List<CategoriaDto> ConverterParaListaDto(List<Categoria> categorias) {

@@ -60,7 +60,7 @@ public class ProdutoService {
     }
 
     private Produto findByIdValidado(Integer id) {
-        return repository.findById(id).orElseThrow(() -> new BusinessException(MessageFormat.format("Produto de id {} não encontrado.", id)));
+        return repository.findById(id).orElseThrow(() -> new BusinessException(MessageFormat.format("Produto de id {0} não encontrado.", id)));
     }
 
     private void setupCategoriaNoProduto(ProdutoDto produtoAtualizado, Produto produto) {
